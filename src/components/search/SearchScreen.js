@@ -19,7 +19,7 @@ export const SearchScreen = () => {
 
   const { searchText } = formValues;
 
-  const heroesFiltered = getHeroesByName('STH HERE');
+  const heroesFiltered = getHeroesByName(q);
 
   const handleSearch = (e) => {
     e.preventDefault(); 
@@ -62,6 +62,13 @@ export const SearchScreen = () => {
           <div className='col-7'>
             <h4>Results</h4>
             <hr />
+
+            {
+              (q === '')
+                  ? <div className='alert alert-info'> Please enter a hero!</div>
+                  : ( heroesFiltered.length === 0 )
+                    && <div className='alert alert-danger'> No results for "{q}", sorry! </div>
+            }
 
             {
               heroesFiltered.map(hero => (
