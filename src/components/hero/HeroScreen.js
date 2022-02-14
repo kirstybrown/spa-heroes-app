@@ -38,7 +38,7 @@ export const HeroScreen = () => {
 
         </div>
 
-        <div className='col-8' animate__animated animate__FadeIn>
+        <div className='col-8 animate__animated animate__fadein'>
           <h3>{ superhero}</h3>
           <ul className='list-group list-group-flush'>
             <li className='list-group-item'> <b>Alter ego:</b> { alter_ego } </li>
