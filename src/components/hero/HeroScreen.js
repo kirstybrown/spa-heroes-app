@@ -7,11 +7,11 @@ export const HeroScreen = () => {
 
   const navigate = useNavigate();
 
-  const hero = getHeroById(heroId);
-
   const handleReturn = () => {
-    return navigate('/');
+    return navigate( -1 );
   }
+
+  const hero = getHeroById(heroId);
 
   if (!hero) return <Navigate to='/' />
 
