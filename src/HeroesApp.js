@@ -5,10 +5,7 @@ import { AppRouter } from './routers/AppRouter'
 
 
 const init = () => {
-  return {
-    logged: true,
-    name: 'Kirsty temporary'
-  }
+  return JSON.parse( localStorage.getItem('user') ) || { logged: false };
 }
 
 export const HeroesApp = () => {
