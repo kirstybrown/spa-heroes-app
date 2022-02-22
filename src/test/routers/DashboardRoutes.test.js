@@ -14,11 +14,11 @@ describe('Tests for <DashboardRoutes />', () => {
         }
     }
 
-    test('should show component correctly', () => { 
+    test('should show component correctly - Marvel', () => { 
 
         const wrapper = mount( 
             <AuthContext.Provider value={contextValue}>
-                <MemoryRouter>
+                <MemoryRouter initialEntries={ ['/'] }>
                     <DashboardRoutes />
                 </MemoryRouter>                
             </AuthContext.Provider>
@@ -27,5 +27,20 @@ describe('Tests for <DashboardRoutes />', () => {
         // console.log(wrapper.html());
         expect( wrapper ).toMatchSnapshot();
         expect( wrapper.find('.text-info').text().trim() ).toBe('Kirsty');
+     })
+
+     test('should show component correctly - DC', () => { 
+
+        const wrapper = mount( 
+            <AuthContext.Provider value={contextValue}>
+                <MemoryRouter initialEntries={ ['/dc'] }>
+                    <DashboardRoutes />
+                </MemoryRouter>                
+            </AuthContext.Provider>
+        
+        );
+        // console.log(wrapper.html());
+        expect( wrapper ).toMatchSnapshot();
+        expect( wrapper.find('h1').text().trim() ).toBe('DC Screen');
      })
  })
