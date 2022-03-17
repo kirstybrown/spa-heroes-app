@@ -1,5 +1,5 @@
 import { mount } from "enzyme"
-import { MemoryRouter, useNavigate } from "react-router-dom"
+import { MemoryRouter } from "react-router-dom"
 import { SearchScreen } from "../../../components/search/SearchScreen"
 
 const mockNavigate = jest.fn();
